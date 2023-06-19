@@ -1,20 +1,21 @@
+import { useContext, useState } from "react"; 
+import { colorContext  } from "./components/UseContextProvider";
 
-import { useRef, useEffect } from "react";
+
+
+
 function App() {
-  const value = useRef(null)
+const data = useContext(colorContext)
 
-  const foucs = () => {
-    value.current.focus()
-    console.log(value.current.value)
-  }
+const [text, settext] = useState(data) 
 
-
-
+settext("test")
+console.log(text)
 
   return (
     <div className="App">
-      <input type="text" ref={value} />
-      <button type="button" onClick={foucs} > cewfefw</button>
+      <input type="text" />
+      <button >reggregr</button>
     </div>
   );
 }

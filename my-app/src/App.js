@@ -1,21 +1,20 @@
-import { useContext, useState } from "react"; 
-import { colorContext  } from "./components/UseContextProvider";
 
-
-
+import React, { useSelector} from "react-redux";
 
 function App() {
-const data = useContext(colorContext)
 
-const [text, settext] = useState(data) 
 
-settext("test")
-console.log(text)
+
+  const data = useSelector(state => state.count )
+
+  console.log(data)
 
   return (
     <div className="App">
-      <input type="text" />
-      <button >reggregr</button>
+      <h3>Counter : </h3>
+      <button>+</button>
+      <button>-</button>
+      <button>0</button>
     </div>
   );
 }

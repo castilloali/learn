@@ -1,20 +1,23 @@
+import { useState } from "react";
+import ShowData from "./ShowData";
 
-import React, { useSelector} from "react-redux";
+
 
 function App() {
+const [data, setData] = useState(["egy", "dhdjhd"])
 
+const [sellectedContrie, setsellectedContrie] = useState(null)
 
+const handler = (contre) => {
+  console.log(contre)
+  setsellectedContrie(contre)
 
-  const data = useSelector(state => state.count )
-
-  console.log(data)
-
+}
   return (
     <div className="App">
-      <h3>Counter : </h3>
-      <button>+</button>
-      <button>-</button>
-      <button>0</button>
+      <h1>DATA</h1>
+      <h3>contrie is {sellectedContrie}</h3>
+      <ShowData handler={handler} data={data} />
     </div>
   );
 }
